@@ -1,6 +1,5 @@
 FROM nixos/nix
-RUN nix-env -i python3 taskwarrior timewarrior tasksh asciinema broot speedometer vim git tmux
-RUN echo "alias br=broot" >> /root/.profile && source /root/.profile
+RUN nix-env -i python taskwarrior timewarrior tasksh tmux
 ADD .tmuxrc /root/.tmuxrc
 RUN touch /root/.taskrc
 RUN yes yes | timew summary
