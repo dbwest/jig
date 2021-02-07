@@ -1,5 +1,5 @@
 FROM nixos/nix
-RUN nix-env -i python taskwarrior timewarrior tasksh tmux
+RUN nix-env -i python3 taskwarrior timewarrior tasksh tmux
 ADD .tmuxrc /root/.tmuxrc
 RUN echo "data.location=~/.task" > ~/.taskrc
 RUN yes yes | timew summary
